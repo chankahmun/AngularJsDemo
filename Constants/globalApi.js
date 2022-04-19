@@ -1,0 +1,1 @@
+﻿export const _baseUrl = "https://chankahmun.github.io/asset/api.js"
