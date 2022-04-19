@@ -1,11 +1,25 @@
-<!DOCTYPE html>
-<html lang="en-US">
-<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>-->
-<body>
+<!doctype html>
+<html ng-app="App">
+<head>
 
-<div >
-   <p>My first expression</p>
-</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.29/angular-ui-router.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-cookies.min.js"></script>
+    <script src="https://rawgithub.com/gsklee/ngStorage/master/ngStorage.js"></script>
+    <script type="module" src="Scripts/mainNavController.js"></script>
+    <script type="module" src="Scripts/loginController.js"></script>
+    <script type="module" src="Scripts/daskboardController.js"></script>
+    <script type="module" src="Scripts/dataBindingController.js"></script>
+    <script type="module" src="Scripts/loadApiController.js"></script>
+    <script type="module" src="Scripts/mainPageController.js"></script>
+    
+    <link href="Style/Sytle.css" rel="stylesheet" />
+    <base href="/" />
+</head>
+<body style="width: 100%;margin: 0;padding: 0;">
+    
 
+    <div ui-view></div>
+   
 </body>
 </html>
