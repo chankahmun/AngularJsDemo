@@ -1,23 +1,27 @@
 <!doctype html>
 
 
-<html ng-app="helloworld">
+<html ng-app="App">
   <head>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <script type="text/javascript" src = "https://unpkg.com/@uirouter/angularjs@1.0.7/release/angular-ui-router.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-cookies.min.js"></script>
+    <script type="text/javascript" src="https://rawgithub.com/gsklee/ngStorage/master/ngStorage.js"></script>
     <script src="app.js"></script>
     <script src="src/js/loginCtrl.js"></script>
+    <script src="src/js/daskboardCtrl.js"></script>
 
     <style>.active { color: red; font-weight: bold; }</style>
+    <link href="style.css" rel="stylesheet" />
   </head>
 
-  <body ng-app="helloworld">
-    <a ui-sref="hello" ui-sref-active="active">Hello</a>
+  <body >
+    <!-- <a ui-sref="login" ui-sref-active="active">Hello</a>
     <a ui-sref="about" ui-sref-active="active">About</a>
     <div ng-controller="appCtrl">
         <button type="button" ng-click="submit()">Login</button>
-    </div>
-   
+    </div> -->
+    <div ></div>
     <ui-view></ui-view>
   </body>
 </html>

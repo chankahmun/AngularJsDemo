@@ -1,4 +1,4 @@
-angular.module("helloworld").controller("loginCtrl", loginFunction)
+angular.module("App").controller("loginCtrl", loginFunction)
 
 function loginFunction($scope ) {
     $scope.submit = function () {

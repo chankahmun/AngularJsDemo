@@ -1,0 +1,140 @@
+<div data-ng-init="init()">
+    <div>
+        <ul class="TopMenuListUl">
+            <li class="TopMenuListLi">
+                <div class="logoDiv">
+                    Global Finance Demo
+                </div>
+
+            </li>
+            <li class="TopMenuListLi">
+                <div class="warningDiv">
+                    Noted: Please bear in mind, all the information in this page may not be true, the purpose is to help owner to partice the computing skill.
+                </div>
+
+            </li>
+
+        </ul>
+    </div>
+
+
+    <marquee direction="left" loop="">
+        <span ng-repeat="(key, value) in tradelist">
+
+            <span style="color:darkorange">{{value.symbol}}</span> {{value.price}} &nbsp; &nbsp;
+
+        </span>
+    </marquee>
+
+
+
+
+
+
+    <ul class="menu-selector-ul">
+        <li class="menu-selector-li">
+            <a ui-sref="dashboard.mainPage">Main Page</a>
+        </li>
+        <li class="menu-selector-li">
+            <a ui-sref="dashboard.mainPage">Finance Summary</a>
+        </li>
+        <li class="menu-selector-li">
+            <a ui-sref="dashboard.mainPage">Watchlist</a>
+        </li>
+
+
+    </ul>
+
+
+    <table style="padding:0px 5% 0px 5%; width:100%; height:700px">
+        <tr>
+            <th style="width:80%"></th>
+            <th style="width:20%"></th>
+        </tr>
+
+        <tr>
+            <td  class="main-content-wrapper">
+                
+                <div ui-view></div>
+
+            </td>
+            <td class="left-menu-wrapper" valign="top">
+                <div class="width:100%">
+                    <div>Stocks:Gainers<img ng-click="refreshGainer();" height="10" width="10" src="../Assets/refresh.svg" /></div>
+
+
+                    <div class="alterOptionDivDisplay" ng-repeat="obj in topgainers | limitTo: limitDisplay">
+
+                        <table class="atlerOptionTableDisplay">
+
+
+                            <tr>
+
+                                <td>
+                                    <div class="alterOptionTicketDisplay">
+                                        {{obj.ticker }}
+                                    </div>
+
+                                </td>
+
+                                <td>{{obj.price | number: decimalPlaces}}</td>
+                                <td>{{obj.changes > 0 ? '+' : '' }}{{obj.changes | number: decimalPlaces}}</td>
+                                <td><label ng-style="priceStyle(obj.changesPercentage)">{{obj.changesPercentage > 0 ? '+' : ''}}{{obj.changesPercentage | number: decimalPlaces}}</label></td>
+
+                            </tr>
+
+                        </table>
+                        <div class="alterOptionCompanyNameDisplay">
+                            {{obj.companyName}}
+                        </div>
+
+
+                    </div>
+
+                    <br />
+
+                    <div>Stocks:Losers<img ng-click="refreshLoser();" height="10" width="10" src="../Assets/refresh.svg" /></div>
+
+                    <div class="alterOptionDivDisplay" ng-repeat="obj in toplosers | limitTo: limitDisplay">
+
+                        <table class="atlerOptionTableDisplay">
+                            <tr>
+
+                                <td>
+                                    <div class="alterOptionTicketDisplay">
+                                        {{obj.ticker }}
+                                    </div>
+
+                                </td>
+
+                                <td>{{obj.price | number: decimalPlaces}}</td>
+                                <td>{{obj.changes > 0 ? '+' : '' }}{{obj.changes | number: decimalPlaces}}</td>
+                                <td><label ng-style="priceStyle(obj.changesPercentage)">{{obj.changesPercentage > 0 ? '+' : ''}}{{obj.changesPercentage | number: decimalPlaces}}</label></td>
+
+                            </tr>
+
+                        </table>
+                        <div class="alterOptionCompanyNameDisplay">
+                            {{obj.companyName}}
+                        </div>
+
+                    </div>
+
+
+                    <br />
+                    
+
+
+
+                </div>
+        
+            </td>
+        </tr>
+
+
+
+       
+    </table>
+
+</div>
+

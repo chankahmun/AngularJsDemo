@@ -1,24 +1,21 @@
-var myApp = angular.module('helloworld', ['ui.router']);
+var myApp = angular.module('App', ['ui.router', 'ngStorage']);
 
 myApp.config(function($stateProvider,$urlRouterProvider) {
-
+  $urlRouterProvider.otherwise('/daskb');
   $stateProvider.state({
-    name: 'hello',
-    url: '/hello',
+    name: 'login',
+    url: '/login',
     templateUrl: 'src/templates/login.html',
     controller: "loginCtrl"
   });
 
   $stateProvider.state({
-    name: 'about',
-    url: '/about',
-    template: '<h3>Its the UI-Router hello world app!</h3>'
+    name: 'daskb',
+    url: '/daskb',
+    templateUrl: 'src/templates/daskboard.html',
+    controller: "daskBCtrl"
   });
-
+  
   
 })
-.controller("appCtrl", function($scope, $state){
-    $scope.submit = function(){
-        $state.go("hello"); 
-    }
-})
+
