@@ -35,12 +35,12 @@
         <li class="menu-selector-li">
             <a ui-sref="daskb.mainpage">Main Page</a>
         </li>
-        <li class="menu-selector-li">
+        <!-- <li class="menu-selector-li">
             <a ui-sref="dashboard.mainPage">Finance Summary</a>
         </li>
         <li class="menu-selector-li">
             <a ui-sref="dashboard.mainPage">Watchlist</a>
-        </li>
+        </li> -->
 
 
     </ul>
@@ -60,7 +60,7 @@
             </td>
             <td class="left-menu-wrapper" valign="top">
                 <div class="width:100%">
-                    <div>Stocks:Gainers<img ng-click="refreshGainer();" height="10" width="10" src="../Assets/refresh.svg" /></div>
+                    <div>Stocks:Gainers<!--<img ng-click="refreshGainer();" height="10" width="10" src="../Assets/refresh.svg" />--></div>
 
 
                     <div class="alterOptionDivDisplay" ng-repeat="obj in topgainers | limitTo: limitDisplay">
@@ -93,7 +93,7 @@
 
                     <br />
 
-                    <div>Stocks:Losers<img ng-click="refreshLoser();" height="10" width="10" src="../Assets/refresh.svg" /></div>
+                    <div>Stocks:Losers<!--<img ng-click="refreshLoser();" height="10" width="10" src="../Assets/refresh.svg" />--></div>
 
                     <div class="alterOptionDivDisplay" ng-repeat="obj in toplosers | limitTo: limitDisplay">
 

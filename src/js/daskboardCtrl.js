@@ -2,7 +2,7 @@
 
 angular.module("App").controller('daskBCtrl', daskBoardFunction)
 
-function daskBoardFunction($http, $sessionStorage, $scope) {
+function daskBoardFunction($http, $sessionStorage, $scope, $state) {
     
     $scope.limitDisplay = 5;
     $scope.decimalPlaces = 2;
@@ -30,7 +30,7 @@ function daskBoardFunction($http, $sessionStorage, $scope) {
         getGainer($http, $sessionStorage, $scope);
         getLoser($http, $sessionStorage, $scope);
         getTradedLst($http, $sessionStorage, $scope);
-        
+        $state.go('daskb.mainpage');
     }
 
    
