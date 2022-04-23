@@ -1,0 +1,115 @@
+<div ng-controller="mainCtrl" class="main-content-child-wrapper">
+    <table style="width:100%">
+        <tr style="height:200px">
+            <td valign="top" class="news-highlight-today-wrapper">
+
+                <div class="breaking-news-wrapper">
+
+                    <img style="width: 100%;height: 100%;" src={{wsjNews[0].urlToImage}} />
+                    <div >
+                        <h1 class="breaking-news-title">
+                            <a href="{{wsjNews[0].url}}"> {{wsjNews[0].title}}</a>
+                        </h1>
+                        <p class="breaking-news-content">
+                            {{wsjNews[0].content}}
+                        </p>
+                    </div>
+
+
+                </div>
+            </td>
+            <td valign="top" class="news-pin-today-wrapper">
+                <div>
+                    <table>
+                        <tr>
+                            <th style="width:5%" />
+                            <th style="width:33%" />
+                            <th style="width:2%" />
+                            <th style="width:60%" />
+
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td valign="top">
+                                <img style="width:100%;height:100%" src={{wsjNews[1].urlToImage}} />
+                            </td>
+                            <td></td>
+                            <td valign="top">
+                                <span>{{wsjNews[1].source.name}}</span>
+                                <p2 style="font-weight:900"><a href="{{wsjNews[1].url}}">{{wsjNews[1].title}}</a></p2>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td valign="top">
+                                <img style="width:100%;height:100%" src={{wsjNews[2].urlToImage}} />
+                            </td>
+                            <td></td>
+                            <td valign="top">
+                                <span>{{wsjNews[2].source.name}}</span>
+                                <p2 style="font-weight:900"><a href="{{wsjNews[2].url}}">{{wsjNews[2].title}}</a></p2>
+
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td valign="top">
+                                <img style="width:100%;height:100%" src={{wsjNews[3].urlToImage}} />
+                            </td>
+                            <td></td>
+                            <td valign="top">
+                                <span>{{wsjNews[3].source.name}}</span>
+                                <p2 style="font-weight:900"><a href="{{wsjNews[3].url}}">{{wsjNews[3].title}}</a></p2>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td valign="top">
+                                <img style="width:100%;height:100%" src={{wsjNews[4].urlToImage}} />
+                            </td>
+                            <td></td>
+                            <td valign="top">
+                                <span>{{wsjNews[3].source.name}}</span>
+                                <p2 style="font-weight:900"><a href="{{wsjNews[3].url}}">{{wsjNews[4].title}}</a></p2>
+
+                            </td>
+                        </tr>
+                    </table>
+
+
+
+
+            </td>
+        </tr>
+
+
+    </table>
+
+
+    <table style="width:100%">
+        <tr>
+            <th style="width:30%"></th>
+            <th style="width:5%"></th>
+            <th style="width:50%"></th>
+            <th style="width:15%"></th>
+        </tr>
+        <tr ng-repeat="(key, value) in wsjNews " ng-if="key > 5" style="height:200px">
+            <td valign="top">
+                <img style="width:100%;height:100%" src={{value.urlToImage}} />
+            </td>
+            <td></td>
+            <td valign="top">
+                <span>{{value.source.name}}  {{value.publishedAt}}</span> 
+                <h3><a href="{{value.url}}">{{value.title}}</a></h3>
+                <p>{{value.content}}</p>
+            </td>
+            <td></td>
+        </tr>
+    </table>
+
+
+
+</div>

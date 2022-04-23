@@ -23,6 +23,9 @@ function daskBoardFunction($http, $sessionStorage, $scope) {
 
         $sessionStorage.financialApiUrl = data.data.data.api;
         $sessionStorage.financialApiKey = data.data.data.key;
+        $sessionStorage.newsApiUrl = data.data.news.api;
+        $sessionStorage.newsApiKey = data.data.news.key;
+
 
         getGainer($http, $sessionStorage, $scope);
         getLoser($http, $sessionStorage, $scope);
@@ -38,30 +41,40 @@ function daskBoardFunction($http, $sessionStorage, $scope) {
 }
 
 function getTradedLst($http, $sessionStorage, $scope){
-    $http.get($sessionStorage.financialApiUrl + "/api/v3/available-traded/list?apikey=" + $sessionStorage.financialApiKey)
-    .then(function (response) {
-       
-        $scope.tradelist = response['data'];
-        
-    });
+
+    setTimeout(()=>{
+        $http.get($sessionStorage.financialApiUrl + "/api/v3/available-traded/list?apikey=" + $sessionStorage.financialApiKey)
+        .then(function (response) {
+           
+            $scope.tradelist = response['data'];
+            
+        });
+    }, 2000)
+    
 }
 
 function getLoser($http, $sessionStorage, $scope) {
-    $http.get($sessionStorage.financialApiUrl + "/api/v3/losers?apikey=" + $sessionStorage.financialApiKey)
+    setTimeout(() => {
+        $http.get($sessionStorage.financialApiUrl + "/api/v3/losers?apikey=" + $sessionStorage.financialApiKey)
         .then(function (response) {
 
             $scope.toplosers = response['data'];
 
         });
+    }, 4000);
+    
 }
 
 function getGainer($http, $sessionStorage, $scope) {
-    $http.get($sessionStorage.financialApiUrl + "/api/v3/gainers?apikey=" + $sessionStorage.financialApiKey)
+    setTimeout(()=>{
+        $http.get($sessionStorage.financialApiUrl + "/api/v3/gainers?apikey=" + $sessionStorage.financialApiKey)
         .then(function (response) {
 
             $scope.topgainers = response['data'];
 
         });
+    }, 6000)
+   
 }
 
 
