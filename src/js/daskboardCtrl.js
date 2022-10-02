@@ -42,14 +42,14 @@ function daskBoardFunction($http, $sessionStorage, $scope, $state) {
 
 function getTradedLst($http, $sessionStorage, $scope){
 
-    setTimeout(()=>{
-        $http.get($sessionStorage.financialApiUrl + "/api/v3/available-traded/list?apikey=" + $sessionStorage.financialApiKey)
-        .then(function (response) {
+    // setTimeout(()=>{
+    //     $http.get($sessionStorage.financialApiUrl + "/api/v3/available-traded/list?apikey=" + $sessionStorage.financialApiKey)
+    //     .then(function (response) {
            
-            $scope.tradelist = response['data'];
+    //         $scope.tradelist = response['data'];
             
-        });
-    }, 2000)
+    //     });
+    // }, 2000)
     
 }
 
